@@ -39,12 +39,16 @@ class LoginFormViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let correctLogin = "admin"
-        let correctPassword = "123456"
+        let correctPassword = "123"
         
         if (loginTextField.text == correctLogin) && (passwordTextField.text == correctPassword) {
             print("Правильный логин/пароль")
         } else {
             print("Неправильный логин/пароль")
+            let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(alertAction)
+            self.present(alert, animated: true)
         }
     }
     

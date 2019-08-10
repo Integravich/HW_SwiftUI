@@ -11,7 +11,7 @@
 		55AC1C7222F7126F00E7F0F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7022F7126F00E7F0F4 /* Main.storyboard */; };
 		55AC1C7422F7127000E7F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7322F7127000E7F0F4 /* Assets.xcassets */; };
 		55AC1C7722F7127000E7F0F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7522F7127000E7F0F4 /* LaunchScreen.storyboard */; };
-		55AC1C8122F7139700E7F0F4 /* LoginFormControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C8022F7139700E7F0F4 /* LoginFormControllerViewController.swift */; };
+		55AC1C8122F7139700E7F0F4 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C8022F7139700E7F0F4 /* LoginFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		55AC1C7322F7127000E7F0F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55AC1C7622F7127000E7F0F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55AC1C7822F7127000E7F0F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55AC1C8022F7139700E7F0F4 /* LoginFormControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormControllerViewController.swift; sourceTree = "<group>"; };
+		55AC1C8022F7139700E7F0F4 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */,
-				55AC1C8022F7139700E7F0F4 /* LoginFormControllerViewController.swift */,
+				55AC1C8022F7139700E7F0F4 /* LoginFormViewController.swift */,
 				55AC1C7022F7126F00E7F0F4 /* Main.storyboard */,
 				55AC1C7322F7127000E7F0F4 /* Assets.xcassets */,
 				55AC1C7522F7127000E7F0F4 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55AC1C8122F7139700E7F0F4 /* LoginFormControllerViewController.swift in Sources */,
+				55AC1C8122F7139700E7F0F4 /* LoginFormViewController.swift in Sources */,
 				55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
