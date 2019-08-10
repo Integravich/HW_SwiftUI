@@ -1,5 +1,5 @@
 //
-//  LoginFormControllerViewController.swift
+//  LoginFormViewController.swift
 //  HW Malikov
 //
 //  Created by Andrey Malikov on 04/08/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginFormControllerViewController: UIViewController {
+class LoginFormViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
