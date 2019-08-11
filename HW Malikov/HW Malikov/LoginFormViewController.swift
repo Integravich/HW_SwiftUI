@@ -17,6 +17,7 @@ class LoginFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextField.text = ""
 
         // Жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -24,6 +25,10 @@ class LoginFormViewController: UIViewController {
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        passwordTextField.text = ""
     }
     
 
@@ -37,18 +42,22 @@ class LoginFormViewController: UIViewController {
     }
     */
     
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    
+    // переопределение метода - выясняем необходимость перехода (проверка учетных данных)
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let correctLogin = "admin"
         let correctPassword = "123"
         
         if (loginTextField.text == correctLogin) && (passwordTextField.text == correctPassword) {
             print("Правильный логин/пароль")
+            return true
         } else {
             print("Неправильный логин/пароль")
             let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default)
             alert.addAction(alertAction)
             self.present(alert, animated: true)
+            return false
         }
     }
     

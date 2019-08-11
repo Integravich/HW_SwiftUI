@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5510756C23003D7C00E1DCD6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510756B23003D7C00E1DCD6 /* TabBarController.swift */; };
 		55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */; };
 		55AC1C7222F7126F00E7F0F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7022F7126F00E7F0F4 /* Main.storyboard */; };
 		55AC1C7422F7127000E7F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7322F7127000E7F0F4 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5510756B23003D7C00E1DCD6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		55AC1C6922F7126F00E7F0F4 /* HW Malikov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW Malikov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55AC1C7122F7126F00E7F0F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				55AC1C7322F7127000E7F0F4 /* Assets.xcassets */,
 				55AC1C7522F7127000E7F0F4 /* LaunchScreen.storyboard */,
 				55AC1C7822F7127000E7F0F4 /* Info.plist */,
+				5510756B23003D7C00E1DCD6 /* TabBarController.swift */,
 			);
 			path = "HW Malikov";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5510756C23003D7C00E1DCD6 /* TabBarController.swift in Sources */,
 				55AC1C8122F7139700E7F0F4 /* LoginFormViewController.swift in Sources */,
 				55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */,
 			);
@@ -282,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ASWPM5FGH;
 				INFOPLIST_FILE = "HW Malikov/Info.plist";
@@ -291,6 +296,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Andrey-Malikov.HW-Malikov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ASWPM5FGH;
 				INFOPLIST_FILE = "HW Malikov/Info.plist";
@@ -309,6 +316,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Andrey-Malikov.HW-Malikov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
