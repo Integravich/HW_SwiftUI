@@ -1,5 +1,5 @@
 //
-//  LoginFormControllerViewController.swift
+//  LoginFormViewController.swift
 //  HW Malikov
 //
 //  Created by Andrey Malikov on 04/08/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginFormControllerViewController: UIViewController {
+class LoginFormViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +17,7 @@ class LoginFormControllerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextField.text = ""
 
         // Жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -24,6 +25,10 @@ class LoginFormControllerViewController: UIViewController {
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        passwordTextField.text = ""
     }
     
 
@@ -37,14 +42,22 @@ class LoginFormControllerViewController: UIViewController {
     }
     */
     
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    
+    // переопределение метода - выясняем необходимость перехода (проверка учетных данных)
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let correctLogin = "admin"
-        let correctPassword = "123456"
+        let correctPassword = "123"
         
         if (loginTextField.text == correctLogin) && (passwordTextField.text == correctPassword) {
             print("Правильный логин/пароль")
+            return true
         } else {
             print("Неправильный логин/пароль")
+            let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(alertAction)
+            self.present(alert, animated: true)
+            return false
         }
     }
     
