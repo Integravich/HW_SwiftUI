@@ -1,14 +1,14 @@
 //
-//  FriendsTableViewCell.swift
+//  MyFriendsTableViewCell.swift
 //  HW Malikov
 //
-//  Created by Andrey Malikov on 13/08/2019.
+//  Created by Andrey Malikov on 14/08/2019.
 //  Copyright © 2019 Andrey Malikov. All rights reserved.
 //
 
 import UIKit
 
-class FriendsTableViewCell: UITableViewCell {
+class MyFriendsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
