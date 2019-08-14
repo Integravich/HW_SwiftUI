@@ -10,12 +10,13 @@ import UIKit
 
 class FriendsTableVC: UITableViewController {
     
-    var friendNames = [
-        "Вася", "Петя", "Вова", "Саша", "Таня", "Аня", "Света"
-    ]
+    var friends = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // загружаем друзей
+        friends = loadFriends()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,7 +34,7 @@ class FriendsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return friendNames.count
+        return friends.count
     }
 
     
@@ -42,8 +43,7 @@ class FriendsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsTableViewCell
         
         // Получаем друга для конкретной строки
-        let friend = friendNames[indexPath.row]
-        print(friend)
+        let friend = friends[indexPath.row].fullName
         
         // Устанавливаем друга в надпись ячейки
         cell.friendName.text = friend
@@ -98,3 +98,4 @@ class FriendsTableVC: UITableViewController {
     */
 
 }
+

@@ -9,7 +9,9 @@
 import UIKit
 
 class GroupsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var groupCellLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

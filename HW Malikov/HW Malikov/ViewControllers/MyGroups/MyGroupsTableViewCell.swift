@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyFriendsTableViewCell: UITableViewCell {
+class MyGroupsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
