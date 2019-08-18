@@ -45,8 +45,8 @@ class LoginFormViewController: UIViewController {
     
     // переопределение метода - выясняем необходимость перехода (проверка учетных данных)
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let correctLogin = "admin"
-        let correctPassword = "123"
+        let correctLogin = ""
+        let correctPassword = ""
         
         if (loginTextField.text == correctLogin) && (passwordTextField.text == correctPassword) {
             print("Правильный логин/пароль")
