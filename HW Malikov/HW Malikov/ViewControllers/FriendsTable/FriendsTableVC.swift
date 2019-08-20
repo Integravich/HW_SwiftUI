@@ -11,9 +11,11 @@ import UIKit
 class FriendsTableVC: UITableViewController {
     
     var friends = [User]()
-
+    @IBOutlet weak var avatarImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // загружаем друзей
         friends = loadFriends()
