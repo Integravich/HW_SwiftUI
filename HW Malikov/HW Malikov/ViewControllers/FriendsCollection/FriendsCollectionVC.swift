@@ -8,10 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+//private let reuseIdentifier = "Cell"
 
 class FriendsCollectionVC: UICollectionViewController {
 
+    var currentFriend: User? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +21,7 @@ class FriendsCollectionVC: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -44,13 +46,17 @@ class FriendsCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return currentFriend!.photoSet.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendPhoto", for: indexPath) as! FriendsCollectionViewCell
+        
+        // Получаем фото друга для конкретной строки
+        let friendPhoto = currentFriend!.photoSet[indexPath.row]
+        
+        // Устанавливаем фото друга в ячейку
+        cell.friendImageView.image = friendPhoto
     
         return cell
     }
