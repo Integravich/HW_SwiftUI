@@ -124,8 +124,8 @@
 		55D7571F23048ED1009597B9 /* MyGroups */ = {
 			isa = PBXGroup;
 			children = (
-				55D7571D23048EAF009597B9 /* MyGroupsTableViewCell.swift */,
 				55D7571B23048E53009597B9 /* MyGroupsTableVC.swift */,
+				55D7571D23048EAF009597B9 /* MyGroupsTableViewCell.swift */,
 			);
 			path = MyGroups;
 			sourceTree = "<group>";

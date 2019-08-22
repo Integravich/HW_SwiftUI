@@ -10,6 +10,8 @@ import UIKit
 
 class MyGroupsTableVC: UITableViewController {
 
+    var myGroups = [Group]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,23 +26,54 @@ class MyGroupsTableVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myGroups.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    
+    
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupCell", for: indexPath) as! MyGroupsTableViewCell
+        
+        // Получаем группу для конкретной строки
+        let group = myGroups[indexPath.row].name
+        
+        // Устанавливаем друга в надпись ячейки
+        cell.myGroupCell.text = group
+        
         return cell
+     }
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        // Проверяем идентификатор, чтобы убедиться, что это нужный переход
+        if segue.identifier == "addGroup" {
+            // Получаем ссылку на контроллер, с которого осуществлен переход
+            let groupsTableVC = segue.source as! GroupsTableVC
+            // Получаем индекс выделенной ячейки
+            if let indexPath = groupsTableVC.tableView.indexPathForSelectedRow {
+                // Получаем группу по индексу
+                let group = groupsTableVC.allGroups[indexPath.row]
+                // Добавляем группу в список выбранных групп, если меня в ней еще нет
+                var isNotMyGroup = true
+                for currentGroup in myGroups {
+                    if currentGroup.name == group.name {
+                        isNotMyGroup = false
+                    }
+                }
+                if isNotMyGroup {
+                    myGroups.append(group)
+                }
+                // Обновляем таблицу
+                tableView.reloadData()
+            }
+        }
     }
-    */
+
+
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -50,17 +83,18 @@ class MyGroupsTableVC: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Если была нажата кнопка «Удалить»
         if editingStyle == .delete {
-            // Delete the row from the data source
+            // Удаляем группу из массива
+            myGroups.remove(at: indexPath.row)
+            // И удаляем строку из таблицы
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

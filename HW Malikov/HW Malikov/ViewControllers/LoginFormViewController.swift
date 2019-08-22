@@ -17,6 +17,13 @@ class LoginFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // если мы уже ранее были авторизованы сразу идем к друзьям
+        if UserDefaults.standard.bool(forKey: "isAutorized") {
+            print("Уже авторизованы")
+            performSegue(withIdentifier: "segueLogin", sender: nil)
+        }
+        
         passwordTextField.text = ""
 
         // Жест нажатия
@@ -45,11 +52,14 @@ class LoginFormViewController: UIViewController {
     
     // переопределение метода - выясняем необходимость перехода (проверка учетных данных)
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let correctLogin = "admin"
-        let correctPassword = "123"
-        
+        let correctLogin = ""
+        let correctPassword = ""
+        if UserDefaults.standard.bool(forKey: "isAutorized") {
+            return true
+        }
         if (loginTextField.text == correctLogin) && (passwordTextField.text == correctPassword) {
             print("Правильный логин/пароль")
+            UserDefaults.standard.set(true, forKey: "isAutorized") // запоминаем, что мы  авторизовались
             return true
         } else {
             print("Неправильный логин/пароль")

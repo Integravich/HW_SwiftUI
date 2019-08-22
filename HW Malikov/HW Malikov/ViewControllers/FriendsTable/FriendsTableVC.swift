@@ -11,9 +11,10 @@ import UIKit
 class FriendsTableVC: UITableViewController {
     
     var friends = [User]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // загружаем друзей
         friends = loadFriends()
@@ -44,13 +45,24 @@ class FriendsTableVC: UITableViewController {
         
         // Получаем друга для конкретной строки
         let friend = friends[indexPath.row].fullName
+        let friendPhoto = friends[indexPath.row].photoSet[0]
         
         // Устанавливаем друга в надпись ячейки
         cell.friendName.text = friend
+        cell.avatarImage.image = friendPhoto
 
         return cell
     }
     
+    // передаем друга на следующий экран
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToPhoto" {
+            let nextScene = segue.destination as? FriendsCollectionVC
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let selectedFriend = friends[indexPath!.row]
+            nextScene!.currentFriend = selectedFriend
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
