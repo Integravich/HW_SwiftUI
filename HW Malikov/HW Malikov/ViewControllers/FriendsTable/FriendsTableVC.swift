@@ -15,7 +15,6 @@ class FriendsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // загружаем друзей
         friends = loadFriends()
 

@@ -13,42 +13,58 @@ class User {
     let name: String
     let surname: String
     var fullName: String {
-        return name + " " + surname
+        return surname + " " + name
     }
-    var photoSet = [UIImage]()
+    var photoSet = [UIImage?]()
     
     init(_ name: String, _ surname: String) {
         self.name = name
         self.surname = surname
+    }
+    init(name: String, surname: String, photoset: [UIImage?]) {
+        self.name = name
+        self.surname = surname
+        self.photoSet = photoset
     }
 }
 
 func loadFriends() -> [User] {
     var arrayOfFriends = [User]()
     
-    arrayOfFriends.append(User("Василий", "Краснов"))
-    arrayOfFriends[0].photoSet.append(UIImage(named: "manFPRed")!)
-    arrayOfFriends[0].photoSet.append(UIImage(named: "manFPRed")!)
-    arrayOfFriends[0].photoSet.append(UIImage(named: "manFPRed")!)
+    let User1 = User(name: "Василий",
+                     surname: "Краснов",
+                     photoset: [UIImage(named: "manFPRed")])
+    arrayOfFriends.append(User1)
     
-    arrayOfFriends.append(User("Павел", "Оранжевов"))
-    arrayOfFriends[1].photoSet.append(UIImage(named: "manFPOrange")!)
-    arrayOfFriends[1].photoSet.append(UIImage(named: "manFPOrange")!)
+    let User2 = User(name: "Павел",
+                     surname: "Оранжевов",
+                     photoset: [UIImage(named: "manFPOrange")])
+    arrayOfFriends.append(User2)
+
+    let User3 = User(name: "Сергей",
+                     surname: "Желтов",
+                     photoset: [UIImage(named: "manFPYellow")])
+    arrayOfFriends.append(User3)
     
-    arrayOfFriends.append(User("Сергей", "Желтов"))
-    arrayOfFriends[2].photoSet.append(UIImage(named: "manFPYellow")!)
+    let User4 = User(name: "Максим",
+                     surname: "Зеленов",
+                     photoset: [UIImage(named: "manFPGreen")])
+    arrayOfFriends.append(User4)
+
+    let User5 = User(name: "Алексей",
+                     surname: "Голубов",
+                     photoset: [UIImage(named: "manFPLightBlue")])
+    arrayOfFriends.append(User5)
     
-    arrayOfFriends.append(User("Максим", "Зеленов"))
-    arrayOfFriends[3].photoSet.append(UIImage(named: "manFPGreen")!)
+    let User6 = User(name: "Александр",
+                     surname: "Синев",
+                     photoset: [UIImage(named: "manFPBlue")])
+    arrayOfFriends.append(User6)
     
-    arrayOfFriends.append(User("Алексей", "Голубов"))
-    arrayOfFriends[4].photoSet.append(UIImage(named: "manFPLightBlue")!)
-    
-    arrayOfFriends.append(User("Александр", "Синев"))
-    arrayOfFriends[5].photoSet.append(UIImage(named: "manFPBlue")!)
-    
-    arrayOfFriends.append(User("Евгений", "Фиолетовов"))
-    arrayOfFriends[6].photoSet.append(UIImage(named: "manFPViolet")!)
+    let User7 = User(name: "Евгений",
+                     surname: "Фиолетовов",
+                     photoset: [UIImage(named: "manFPViolet")])
+    arrayOfFriends.append(User7)
     
     return arrayOfFriends
 }
