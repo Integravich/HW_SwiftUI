@@ -217,6 +217,7 @@
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="zSR-ul-sH1" kind="relationship" relationship="viewControllers" id="6hS-gw-vi1"/>
                         <segue destination="u55-FY-22Y" kind="relationship" relationship="viewControllers" id="p0A-Jc-tGl"/>
                         <segue destination="2df-Tq-I67" kind="relationship" relationship="viewControllers" id="I6r-AG-Of3"/>
                     </connections>
@@ -322,6 +323,34 @@
             </objects>
             <point key="canvasLocation" x="4039" y="834"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="Y4p-9H-GUP">
+            <objects>
+                <viewController id="kCJ-8j-cZZ" customClass="NewsViewController" customModule="HW_Malikov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8k-q8-CDS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-2h-JNJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f1d-2h-JNJ" firstAttribute="leading" secondItem="vL1-MA-IzL" secondAttribute="leading" id="Buk-mu-CP9"/>
+                            <constraint firstItem="f1d-2h-JNJ" firstAttribute="top" secondItem="vL1-MA-IzL" secondAttribute="top" id="NtP-HP-Fjs"/>
+                            <constraint firstItem="f1d-2h-JNJ" firstAttribute="bottom" secondItem="vL1-MA-IzL" secondAttribute="bottom" id="Y2Z-mf-IRm"/>
+                            <constraint firstItem="f1d-2h-JNJ" firstAttribute="trailing" secondItem="vL1-MA-IzL" secondAttribute="trailing" id="ZnH-nJ-OYz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vL1-MA-IzL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новости" id="1he-Nk-SxM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7I-tO-Git" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4476.811594202899" y="-567.1875"/>
+        </scene>
         <!--Группы-->
         <scene sceneID="dsN-aI-ZDl">
             <objects>
@@ -361,11 +390,62 @@
             </objects>
             <point key="canvasLocation" x="2664" y="108"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="U7v-fT-Ue1">
+            <objects>
+                <viewController id="db5-sd-leE" customClass="NewsViewController" customModule="HW_Malikov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t0N-vb-N86">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srW-Y3-UGq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="30p-pa-spp" firstAttribute="bottom" secondItem="srW-Y3-UGq" secondAttribute="bottom" id="OKc-qf-NGY"/>
+                            <constraint firstItem="srW-Y3-UGq" firstAttribute="top" secondItem="30p-pa-spp" secondAttribute="top" id="VAg-j2-aWG"/>
+                            <constraint firstItem="30p-pa-spp" firstAttribute="trailing" secondItem="srW-Y3-UGq" secondAttribute="trailing" id="pTy-bG-xkH"/>
+                            <constraint firstItem="srW-Y3-UGq" firstAttribute="leading" secondItem="30p-pa-spp" secondAttribute="leading" id="riM-Pa-jbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="30p-pa-spp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новости" id="7HK-6c-1q4"/>
+                    <connections>
+                        <outlet property="tableView" destination="srW-Y3-UGq" id="bUN-LW-FQ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wby-hn-xxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3618.840579710145" y="-567.1875"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="T6q-GQ-yEM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zSR-ul-sH1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="news32" id="oJX-dy-5KL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ANZ-3g-Nad">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="db5-sd-leE" kind="relationship" relationship="rootViewController" id="jDn-94-ehR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVQ-DU-NFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708.6956521739135" y="-567.1875"/>
+        </scene>
     </scenes>
     <resources>
         <image name="friends24" width="24" height="24"/>
         <image name="groups32" width="32" height="32"/>
         <image name="manFPRed" width="256" height="256"/>
+        <image name="news32" width="16" height="16"/>
         <image name="vkLogin" width="512" height="512"/>
     </resources>
 </document>
