@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HW Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
-            timestampString = "587846244.204357"
+            timestampString = "588456315.0893511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -26,13 +26,121 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HW Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
-            timestampString = "587846244.204461"
+            timestampString = "588456315.089746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
             landmarkName = "MyGroupsTableViewCell"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.myGroupCell.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.503827"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.myGroupCell.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.505782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.myGroupCell.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.507381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.myGroupCell.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.509159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; HW_Malikov.MyGroupsTableViewCell"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.5109529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HW_Malikov.MyGroupsTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HW_Malikov.MyGroupsTableViewCell&gt;"
+                  moduleName = "HW Malikov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrey/Google%20%D0%94%D0%B8%D1%81%D0%BA/Programming/GB%20UI%20Swift/HW/HW%20Malikov/HW%20Malikov/ViewControllers/MyGroups/MyGroupsTableViewCell.swift"
+                  timestampString = "588456072.5124331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HW Malikov/ViewControllers/LoginFormViewController.swift"
+            timestampString = "588483614.455886"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
