@@ -14,6 +14,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var newsDateLabel: UILabel!
     @IBOutlet weak var newsTextLabel: UILabel!
     @IBOutlet weak var newsUserAvatar: UIImageView!
+    @IBOutlet weak var newsUserAvatarShadow: UIView!
     @IBOutlet weak var newsImage: UIImageView!
     
     
@@ -28,12 +29,12 @@ class NewsCell: UITableViewCell {
         newsUserAvatar.layer.cornerRadius = 19 // скругляем
         newsUserAvatar.layer.masksToBounds = true // обрезаем
         // настраиваем тень
-//        newsUserShadow.layer.cornerRadius = 19 // скругляем
-//        newsUserShadow.layer.shadowColor = UIColor.black.cgColor
-//        newsUserShadow.layer.shadowOpacity = 0.5
-//        newsUserShadow.layer.shadowRadius = 2
-//        newsUserShadow.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        newsUserShadow.layer.masksToBounds = false
+        newsUserAvatarShadow.layer.cornerRadius = 19 // скругляем
+        newsUserAvatarShadow.layer.shadowColor = UIColor.black.cgColor
+        newsUserAvatarShadow.layer.shadowOpacity = 0.5
+        newsUserAvatarShadow.layer.shadowRadius = 2
+        newsUserAvatarShadow.layer.shadowOffset = CGSize(width: 2, height: 2)
+        newsUserAvatarShadow.layer.masksToBounds = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

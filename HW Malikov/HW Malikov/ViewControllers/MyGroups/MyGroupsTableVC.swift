@@ -40,9 +40,11 @@ class MyGroupsTableVC: UITableViewController {
         
         // Получаем группу для конкретной строки
         let group = myGroups[indexPath.row].name
+        let image: UIImage? = myGroups[indexPath.row].image
         
-        // Устанавливаем друга в надпись ячейки
+        // Устанавливаем группу в надпись ячейки
         cell.myGroupCell.text = group
+        cell.myGroupImage.image = image
         
         return cell
      }

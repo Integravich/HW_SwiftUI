@@ -257,6 +257,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="myGroupCell" destination="sro-h5-xPb" id="KA9-Vz-aUK"/>
+                                    <outlet property="myGroupImage" destination="hg1-oO-xhF" id="oIx-Dx-Qxi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -307,6 +308,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="groupCellImage" destination="2eW-mR-9hu" id="2ak-fT-VBU"/>
                                     <outlet property="groupCellLabel" destination="EDj-6D-6Hb" id="187-WK-fEX"/>
                                     <segue destination="w3b-8K-W6i" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="Oan-u4-7Dv"/>
                                 </connections>
