@@ -9,10 +9,16 @@
 import UIKit
 
 class LoginFormViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var vkImage: UIImageView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var statusCircle1: UIView!
+    @IBOutlet weak var statusCircle2: UIView!
+    @IBOutlet weak var statusCircle3: UIView!
     
     
     override func viewDidLoad() {
@@ -96,10 +102,91 @@ class LoginFormViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // делаем кружочки индикатора загрузки
+        statusCircle1.layer.cornerRadius = 7 // скругляем
+        statusCircle1.layer.masksToBounds = true // обрезаем
+        statusCircle2.layer.cornerRadius = 7 // скругляем
+        statusCircle2.layer.masksToBounds = true // обрезаем
+        statusCircle3.layer.cornerRadius = 7 // скругляем
+        statusCircle3.layer.masksToBounds = true // обрезаем
+        
         // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         // Второе — когда она пропадает
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Анимация
+        // начальная точка названия
+        self.loginLabel.transform = CGAffineTransform(translationX: 0,
+                                                      y: -self.view.bounds.height/2)
+        // начальная точка кнопки
+        self.button.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height/2)
+        // начальная точка - сдвинутое состояние (логин и пароль)
+        let offset = view.bounds.width
+        loginTextField.transform = CGAffineTransform(translationX: -offset, y: 0)
+        passwordTextField.transform = CGAffineTransform(translationX: offset, y: 0)
+        // прячем лого
+        UIView.animate(withDuration: 0, animations: {
+            self.vkImage.alpha = 0
+        })
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Анимация
+        // статус загрузки мигает
+        UIView.animate(withDuration: 0.9,
+                       delay: 0,
+                       options: [.repeat, .autoreverse],
+                       animations: { self.statusCircle1.alpha = 0 })
+        UIView.animate(withDuration: 0.9,
+                       delay: 0.4,
+                       options: [.repeat, .autoreverse],
+                       animations: { self.statusCircle2.alpha = 0 })
+        UIView.animate(withDuration: 0.9,
+                       delay: 0.8,
+                       options: [.repeat, .autoreverse],
+                       animations: { self.statusCircle3.alpha = 0 })
+        // статус загрузки исчезает
+        UIView.animate(withDuration: 0,
+                       delay: 0 + 0.9 * 5,
+                       animations: { self.statusCircle1.backgroundColor = .none })
+        UIView.animate(withDuration: 0,
+                       delay: 0.4 + 0.9 * 5,
+                       animations: { self.statusCircle2.backgroundColor = .none })
+        UIView.animate(withDuration: 0,
+                       delay: 0.8 + 0.9 * 5,
+                       animations: { self.statusCircle3.backgroundColor = .none })
+        
+        
+        // конечная точка названия
+        UIView.animate(withDuration: 1,
+                       delay: 5.5,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.loginLabel.transform = .identity
+                        self.button.transform = .identity
+        },
+                       completion: nil)
+        // конечная точка (логин и пароль)
+        UIView.animate(withDuration: 0.5,
+                       delay: 6.0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.loginTextField.transform = .identity
+                        self.passwordTextField.transform = .identity
+        },
+                       completion: nil)
+        // появление лого
+        UIView.animate(withDuration: 2,
+                       delay: 0.5,
+                       options: .curveEaseInOut,
+                       animations: {self.vkImage.alpha = 1},
+                       completion: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,6 +201,5 @@ class LoginFormViewController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
-
     
 }
