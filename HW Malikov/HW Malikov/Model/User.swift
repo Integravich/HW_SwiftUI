@@ -31,40 +31,44 @@ class User {
 func loadFriends() -> [User] {
     var arrayOfFriends = [User]()
     
-    let User1 = User(name: "Василий",
+    let user1 = User(name: "Василий",
                      surname: "Краснов",
                      photoset: [UIImage(named: "manFPRed")])
-    arrayOfFriends.append(User1)
+    // для эксперимента добавим еще немного фотографий
+    for i in 1...20 {
+        user1.photoSet.append(UIImage(named: String(i)))
+    }
+    arrayOfFriends.append(user1)
     
-    let User2 = User(name: "Павел",
+    let user2 = User(name: "Павел",
                      surname: "Оранжевов",
                      photoset: [UIImage(named: "manFPOrange")])
-    arrayOfFriends.append(User2)
+    arrayOfFriends.append(user2)
 
-    let User3 = User(name: "Сергей",
+    let user3 = User(name: "Сергей",
                      surname: "Желтов",
                      photoset: [UIImage(named: "manFPYellow")])
-    arrayOfFriends.append(User3)
+    arrayOfFriends.append(user3)
     
-    let User4 = User(name: "Максим",
+    let user4 = User(name: "Максим",
                      surname: "Зеленов",
                      photoset: [UIImage(named: "manFPGreen")])
-    arrayOfFriends.append(User4)
+    arrayOfFriends.append(user4)
 
-    let User5 = User(name: "Алексей",
+    let user5 = User(name: "Алексей",
                      surname: "Голубов",
                      photoset: [UIImage(named: "manFPLightBlue")])
-    arrayOfFriends.append(User5)
+    arrayOfFriends.append(user5)
     
-    let User6 = User(name: "Александр",
+    let user6 = User(name: "Александр",
                      surname: "Синев",
                      photoset: [UIImage(named: "manFPBlue")])
-    arrayOfFriends.append(User6)
+    arrayOfFriends.append(user6)
     
-    let User7 = User(name: "Евгений",
+    let user7 = User(name: "Евгений",
                      surname: "Фиолетовов",
                      photoset: [UIImage(named: "manFPViolet")])
-    arrayOfFriends.append(User7)
+    arrayOfFriends.append(user7)
     
     return arrayOfFriends
 }
