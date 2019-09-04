@@ -208,27 +208,26 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendPhoto" id="aJU-42-tsl" customClass="FriendsCollectionViewCell" customModule="HW_Malikov" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="170"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0X8-wb-NGN">
-                                            <rect key="frame" x="130" y="150" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-aq-K6f">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-aq-K6f">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <size key="customSize" width="150" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="QuP-aq-K6f" secondAttribute="bottom" id="8KM-G0-rRX"/>
+                                    <constraint firstItem="QuP-aq-K6f" firstAttribute="leading" secondItem="aJU-42-tsl" secondAttribute="leading" id="E7c-Nz-uYS"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuP-aq-K6f" secondAttribute="trailing" id="xMW-xQ-Zwt"/>
+                                    <constraint firstItem="QuP-aq-K6f" firstAttribute="top" secondItem="aJU-42-tsl" secondAttribute="top" id="zxJ-Vv-u7D"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="150"/>
                                 <connections>
                                     <outlet property="friendImageView" destination="QuP-aq-K6f" id="Zi7-2A-GJT"/>
-                                    <outlet property="likeView" destination="0X8-wb-NGN" id="t9N-ij-jrs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -240,7 +239,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksm-aR-QYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4232" y="108"/>
+            <point key="canvasLocation" x="4231.884057971015" y="107.8125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yQb-fS-g8x">

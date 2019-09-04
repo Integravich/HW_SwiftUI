@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55126FB023049597000B2C68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55126FAF23049597000B2C68 /* User.swift */; };
 		55126FB2230495CF000B2C68 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55126FB1230495CF000B2C68 /* Group.swift */; };
+		551D2AFD23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D2AFC23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift */; };
 		55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */; };
 		55AC1C7222F7126F00E7F0F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7022F7126F00E7F0F4 /* Main.storyboard */; };
 		55AC1C7422F7127000E7F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7322F7127000E7F0F4 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		55126FAF23049597000B2C68 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55126FB1230495CF000B2C68 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		551D2AFC23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		55AC1C6922F7126F00E7F0F4 /* HW Malikov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW Malikov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55AC1C7122F7126F00E7F0F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				55D75716230489B2009597B9 /* FriendsCollectionVC.swift */,
+				551D2AFC23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift */,
 				55D7571823048A0B009597B9 /* FriendsCollectionViewCell.swift */,
 			);
 			path = FriendsCollection;
@@ -242,6 +245,7 @@
 				55AC1C8122F7139700E7F0F4 /* LoginFormViewController.swift in Sources */,
 				55CA041A2312FD1C0020E61E /* News.swift in Sources */,
 				55126FB2230495CF000B2C68 /* Group.swift in Sources */,
+				551D2AFD23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift in Sources */,
 				55D7571E23048EAF009597B9 /* MyGroupsTableViewCell.swift in Sources */,
 				55D7571C23048E53009597B9 /* MyGroupsTableVC.swift in Sources */,
 				55CA04132312EA590020E61E /* NewsViewController.swift in Sources */,
