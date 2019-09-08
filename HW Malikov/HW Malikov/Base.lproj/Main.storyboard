@@ -391,7 +391,7 @@
         <!--Группы-->
         <scene sceneID="dsN-aI-ZDl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2df-Tq-I67" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CustomNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2df-Tq-I67" customClass="CustomNavigationController" customModule="HW_Malikov" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="groups32" id="1Of-Pu-edR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RzU-kA-lue">
