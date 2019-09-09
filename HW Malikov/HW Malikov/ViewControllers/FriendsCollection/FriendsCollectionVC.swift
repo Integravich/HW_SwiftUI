@@ -14,6 +14,13 @@ class FriendsCollectionVC: UICollectionViewController {
 
     var currentFriend: User? = nil
     
+    // для Layout
+    let itemsPerRow: CGFloat = 3
+    let sectionInsets = UIEdgeInsets(top: 20.0,
+                                     left: 15.0,
+                                     bottom: 20.0,
+                                     right: 15.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
