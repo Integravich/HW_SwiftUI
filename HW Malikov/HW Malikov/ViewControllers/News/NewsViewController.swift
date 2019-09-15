@@ -18,13 +18,13 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        news.append(News(newsUser: "Краснов Василий", newsUserAvatar: UIImage(named: "manFPRed"), newsDate: "25.08.19", newsText: "Скандалы, интриги, расследования", newsImage: UIImage(named: "news1")))
+        news.append(News(newsUser: "Краснов Василий", newsUserAvatar: UIImage(named: "manFPRed"), newsDate: "25.08.19", newsText: "Скандалы, интриги, расследования, cкандалы, интриги, расследования, cкандалы, интриги, расследования", newsImage: UIImage(named: "news1")))
         
         // регистрируем ячейку
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
-        // высота ячейки
-        self.tableView.rowHeight = 350
+        // автоматический выбор высоты ячеек
+        tableView.rowHeight = UITableView.automaticDimension
         
         self.tableView.dataSource = self
     }

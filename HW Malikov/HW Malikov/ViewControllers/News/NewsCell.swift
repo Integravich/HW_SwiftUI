@@ -17,10 +17,15 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var newsUserAvatarShadow: UIView!
     @IBOutlet weak var newsImage: UIImageView!
     
+    @IBOutlet weak var heartControl: HeartControl!
+    @IBOutlet weak var heartLabel: UILabel!
+    var heartCount = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        heartControl.addTarget(self, action: #selector(touchedUpInside), for: UIControl.Event.touchUpInside)
         
         // чтобы ячейка не выбиралась
         self.selectionStyle = .none
@@ -35,6 +40,11 @@ class NewsCell: UITableViewCell {
         newsUserAvatarShadow.layer.shadowRadius = 2
         newsUserAvatarShadow.layer.shadowOffset = CGSize(width: 2, height: 2)
         newsUserAvatarShadow.layer.masksToBounds = false
+    }
+    
+    @objc func touchedUpInside() {
+        heartCount += 1
+        heartLabel.text = String(heartCount)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
