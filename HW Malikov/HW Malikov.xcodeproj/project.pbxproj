@@ -13,6 +13,7 @@
 		551D2B2B23257E8B00A23BE6 /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D2B2A23257E8B00A23BE6 /* CustomPushAnimator.swift */; };
 		551D2B2D23257F3F00A23BE6 /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D2B2C23257F3F00A23BE6 /* CustomPopAnimator.swift */; };
 		551D2B302325800900A23BE6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D2B2F2325800900A23BE6 /* CustomNavigationController.swift */; };
+		55448B8A2332B053004D995D /* VKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55448B892332B053004D995D /* VKLoginViewController.swift */; };
 		55545113232EB8A80058A382 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55545112232EB8A80058A382 /* Session.swift */; };
 		55545115232EC8D80058A382 /* HeartControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55545114232EC8D80058A382 /* HeartControl.swift */; };
 		55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		551D2B2A23257E8B00A23BE6 /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
 		551D2B2C23257F3F00A23BE6 /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
 		551D2B2F2325800900A23BE6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		55448B892332B053004D995D /* VKLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginViewController.swift; sourceTree = "<group>"; };
 		55545112232EB8A80058A382 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		55545114232EC8D80058A382 /* HeartControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartControl.swift; sourceTree = "<group>"; };
 		55AC1C6922F7126F00E7F0F4 /* HW Malikov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW Malikov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				55AC1C8022F7139700E7F0F4 /* LoginFormViewController.swift */,
+				55448B892332B053004D995D /* VKLoginViewController.swift */,
 				55D7571523048458009597B9 /* FriendsTable */,
 				55D7571A23048A19009597B9 /* FriendsCollection */,
 				55D7571F23048ED1009597B9 /* MyGroups */,
@@ -265,6 +268,7 @@
 			files = (
 				55D75717230489B2009597B9 /* FriendsCollectionVC.swift in Sources */,
 				55D9499023034A5E0044B174 /* FriendsTableVC.swift in Sources */,
+				55448B8A2332B053004D995D /* VKLoginViewController.swift in Sources */,
 				55AC1C8122F7139700E7F0F4 /* LoginFormViewController.swift in Sources */,
 				55CA041A2312FD1C0020E61E /* News.swift in Sources */,
 				551D2B2D23257F3F00A23BE6 /* CustomPopAnimator.swift in Sources */,
