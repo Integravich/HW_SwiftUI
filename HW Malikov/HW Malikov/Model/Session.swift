@@ -19,6 +19,7 @@ class Session { // Синглтон
     var password = ""
     var token = ""
     var userId = ""
+    var client_id = "7138996" // id приложения
     
 }
 

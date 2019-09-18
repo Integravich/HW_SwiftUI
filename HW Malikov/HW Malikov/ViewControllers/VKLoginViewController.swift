@@ -21,14 +21,14 @@ class VKLoginViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let session = Session.instance
         // мы создаем URL https://oauth.vk.com/authorize и добавляем ему необходимые параметры. Создаем из URL запрос – URLRequest, – согласно документации. После открываем страницу с помощью метода  webview.load(request).
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: "7138996"), // id моего приложения VK
+            URLQueryItem(name: "client_id", value: session.client_id), // id моего приложения VK
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "262150"),
