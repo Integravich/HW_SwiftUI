@@ -11,12 +11,16 @@ import UIKit
 class FriendsTableVC: UITableViewController {
     
     var friends = [User]()
+    let netService = VKNetService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // загружаем друзей
+        // загружаем друзей по старинке
         friends = loadFriends()
+        
+        // загружаем друзей из VK
+        netService.getFriends()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

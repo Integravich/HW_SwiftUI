@@ -50,7 +50,7 @@
                                         <rect key="frame" x="185" y="506" width="44" height="30"/>
                                         <state key="normal" title="Войти"/>
                                         <connections>
-                                            <segue destination="91k-sp-6JF" kind="presentation" identifier="segueLogin" id="eZt-XL-Akg"/>
+                                            <segue destination="5fK-JD-GJl" kind="presentation" identifier="segueLogin" id="JNl-1e-kCn"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vkLogin" translatesAutoresizingMaskIntoConstraints="NO" id="MPf-Vr-xyS">
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046.376811594203" y="108.48214285714285"/>
+            <point key="canvasLocation" x="323" y="108"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="9MM-Ee-b8g">
@@ -457,6 +457,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wby-hn-xxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3618.840579710145" y="-567.1875"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="b0w-05-uTC">
+            <objects>
+                <viewController id="5fK-JD-GJl" customClass="VKLoginViewController" customModule="HW_Malikov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PJL-8t-M5m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4f2-LY-cF7"/>
+                    </view>
+                    <connections>
+                        <segue destination="91k-sp-6JF" kind="show" identifier="VKLoginSegue" id="HgS-GH-tbA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Op5-w7-fkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059" y="108"/>
         </scene>
         <!--Новости-->
         <scene sceneID="T6q-GQ-yEM">
