@@ -12,6 +12,7 @@ class FriendsTableVC: UITableViewController {
     
     var friends = [User]()
     let netService = VKNetService()
+    let session = Session.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,9 @@ class FriendsTableVC: UITableViewController {
         
         // загружаем друзей из VK
         netService.getFriends()
+        
+        // загружаем фотографии стены пользователя
+        netService.getWallPhotos(ofUserID: session.userId)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
