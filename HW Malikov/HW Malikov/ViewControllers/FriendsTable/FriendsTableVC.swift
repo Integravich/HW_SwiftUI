@@ -25,6 +25,9 @@ class FriendsTableVC: UITableViewController {
         
         // загружаем фотографии стены пользователя
         netService.getWallPhotos(ofUserID: session.userId)
+        
+        // загружаем группы пользователя
+        netService.getGroups(ofUserID: session.userId)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
