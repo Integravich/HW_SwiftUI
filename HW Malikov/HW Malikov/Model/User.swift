@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class User {
+class User0 {
     let name: String
     let surname: String
     var fullName: String {
@@ -28,10 +28,10 @@ class User {
     }
 }
 
-func loadFriends() -> [User] {
-    var arrayOfFriends = [User]()
+func loadFriends() -> [User0] {
+    var arrayOfFriends = [User0]()
     
-    let user1 = User(name: "Василий",
+    let user1 = User0(name: "Василий",
                      surname: "Краснов",
                      photoset: [UIImage(named: "manFPRed")])
     // для эксперимента добавим еще немного фотографий
@@ -40,32 +40,32 @@ func loadFriends() -> [User] {
     }
     arrayOfFriends.append(user1)
     
-    let user2 = User(name: "Павел",
+    let user2 = User0(name: "Павел",
                      surname: "Оранжевов",
                      photoset: [UIImage(named: "manFPOrange")])
     arrayOfFriends.append(user2)
 
-    let user3 = User(name: "Сергей",
+    let user3 = User0(name: "Сергей",
                      surname: "Желтов",
                      photoset: [UIImage(named: "manFPYellow")])
     arrayOfFriends.append(user3)
     
-    let user4 = User(name: "Максим",
+    let user4 = User0(name: "Максим",
                      surname: "Зеленов",
                      photoset: [UIImage(named: "manFPGreen")])
     arrayOfFriends.append(user4)
 
-    let user5 = User(name: "Алексей",
+    let user5 = User0(name: "Алексей",
                      surname: "Голубов",
                      photoset: [UIImage(named: "manFPLightBlue")])
     arrayOfFriends.append(user5)
     
-    let user6 = User(name: "Александр",
+    let user6 = User0(name: "Александр",
                      surname: "Синев",
                      photoset: [UIImage(named: "manFPBlue")])
     arrayOfFriends.append(user6)
     
-    let user7 = User(name: "Евгений",
+    let user7 = User0(name: "Евгений",
                      surname: "Фиолетовов",
                      photoset: [UIImage(named: "manFPViolet")])
     arrayOfFriends.append(user7)
