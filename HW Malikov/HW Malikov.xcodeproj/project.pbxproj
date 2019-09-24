@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54C538A6F57C7B114C5B0A16 /* Pods_HW_Malikov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6FFBA47BE9169635A7C33E /* Pods_HW_Malikov.framework */; };
 		55126FB023049597000B2C68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55126FAF23049597000B2C68 /* User.swift */; };
 		55126FB2230495CF000B2C68 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55126FB1230495CF000B2C68 /* Group.swift */; };
 		551D2AFD23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D2AFC23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B6FFBA47BE9169635A7C33E /* Pods_HW_Malikov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW_Malikov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55126FAF23049597000B2C68 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55126FB1230495CF000B2C68 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		551D2AFC23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		55D757222304906F009597B9 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		55D9498F23034A5E0044B174 /* FriendsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableVC.swift; sourceTree = "<group>"; };
 		55D9499223034D770044B174 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		62EB713948BA79E62783A276 /* Pods-HW Malikov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW Malikov.release.xcconfig"; path = "Target Support Files/Pods-HW Malikov/Pods-HW Malikov.release.xcconfig"; sourceTree = "<group>"; };
+		C1BD443DC3474D02FAB6196C /* Pods-HW Malikov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW Malikov.debug.xcconfig"; path = "Target Support Files/Pods-HW Malikov/Pods-HW Malikov.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C538A6F57C7B114C5B0A16 /* Pods_HW_Malikov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +131,8 @@
 			children = (
 				55AC1C6B22F7126F00E7F0F4 /* HW Malikov */,
 				55AC1C6A22F7126F00E7F0F4 /* Products */,
+				CB87C146B2A0C65491E5885F /* Pods */,
+				7AE2D5901FAF9CECB63A8827 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +215,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		7AE2D5901FAF9CECB63A8827 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B6FFBA47BE9169635A7C33E /* Pods_HW_Malikov.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB87C146B2A0C65491E5885F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1BD443DC3474D02FAB6196C /* Pods-HW Malikov.debug.xcconfig */,
+				62EB713948BA79E62783A276 /* Pods-HW Malikov.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55AC1C7B22F7127000E7F0F4 /* Build configuration list for PBXNativeTarget "HW Malikov" */;
 			buildPhases = (
+				A56C1A76E84166B9576BAD2F /* [CP] Check Pods Manifest.lock */,
 				55AC1C6522F7126F00E7F0F4 /* Sources */,
 				55AC1C6622F7126F00E7F0F4 /* Frameworks */,
 				55AC1C6722F7126F00E7F0F4 /* Resources */,
+				4DE6D74BEA4D1774A833B7A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +301,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DE6D74BEA4D1774A833B7A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HW Malikov/Pods-HW Malikov-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HW Malikov/Pods-HW Malikov-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HW Malikov/Pods-HW Malikov-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A56C1A76E84166B9576BAD2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HW Malikov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55AC1C6522F7126F00E7F0F4 /* Sources */ = {
@@ -448,6 +517,7 @@
 		};
 		55AC1C7C22F7127000E7F0F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1BD443DC3474D02FAB6196C /* Pods-HW Malikov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -468,6 +538,7 @@
 		};
 		55AC1C7D22F7127000E7F0F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62EB713948BA79E62783A276 /* Pods-HW Malikov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
