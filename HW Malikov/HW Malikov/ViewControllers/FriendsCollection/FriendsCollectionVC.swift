@@ -53,14 +53,14 @@ class FriendsCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return currentFriend!.photoSet.count
+        return 1 //currentFriend!.photoSet.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendPhoto", for: indexPath) as! FriendsCollectionViewCell
         
         // Получаем фото друга для конкретной строки
-        let friendPhoto = currentFriend!.photoSet[indexPath.row]
+        let friendPhoto = UIImage(imageLiteralResourceName: currentFriend!.avatarPhoto) //currentFriend!.photoSet[indexPath.row]
         
         // Устанавливаем фото друга в ячейку
         cell.friendImageView.image = friendPhoto
