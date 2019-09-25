@@ -13,9 +13,12 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var news: [News] = []
+    let netService = VKNetService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        netService.getFriends()
 
         // Do any additional setup after loading the view.
         news.append(News(newsUser: "Краснов Василий", newsUserAvatar: UIImage(named: "manFPRed"), newsDate: "25.08.19", newsText: "Скандалы, интриги, расследования, cкандалы, интриги, расследования, cкандалы, интриги, расследования", newsImage: UIImage(named: "news1")))

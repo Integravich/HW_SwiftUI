@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LoginFormViewController: UIViewController {
     
@@ -20,7 +21,6 @@ class LoginFormViewController: UIViewController {
     @IBOutlet weak var statusCircle2: UIView!
     @IBOutlet weak var statusCircle3: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +32,26 @@ class LoginFormViewController: UIViewController {
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         
         // Do any additional setup after loading the view.
+        
+        // удаляем базу данных realm
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        let realmURLs = [
+            realmURL,
+            realmURL.appendingPathExtension("lock"),
+            realmURL.appendingPathExtension("note"),
+            realmURL.appendingPathExtension("management")
+        ]
+        for URL in realmURLs {
+            do {
+                try FileManager.default.removeItem(at: URL)
+            } catch {
+                print(error)
+            }
+        }
+        
+        // загружаем друзей из VK
+        //netService.getFriends()
+        
     }
     
     /*

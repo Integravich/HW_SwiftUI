@@ -49,9 +49,20 @@ class VKNetService {
                         print(user.surname)
                         print(user.avatarPhoto)
                 }
-                DispatchQueue.main.async {
-                    print("loadResults = \(Thread.isMainThread ? "Main Thread":"Background Thread")")
-                    //self.subMenuItemTableView.reloadData()
+                // обработка исключений при работе с хранилищем
+                do {
+                    // получаем доступ к хранилищу
+                    let realm = try Realm()
+                    // начинаем изменять хранилище
+                    realm.beginWrite()
+                    // кладем все объекты класса в хранилище
+                    realm.add(users)
+                    // завершаем изменения хранилища
+                    try realm.commitWrite()
+                    print("Количество User в базе = \(realm.objects(User.self).count)")
+                } catch {
+                    // если произошла ошибка, выводим ее в консоль
+                    print(error)
                 }
             } catch {
                 print(error)
