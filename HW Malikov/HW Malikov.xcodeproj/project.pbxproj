@@ -18,6 +18,7 @@
 		55448B902336A2BE004D995D /* User2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55448B8F2336A2BE004D995D /* User2.swift */; };
 		55545113232EB8A80058A382 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55545112232EB8A80058A382 /* Session.swift */; };
 		55545115232EC8D80058A382 /* HeartControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55545114232EC8D80058A382 /* HeartControl.swift */; };
+		558A83A6233C09BC00D4C57D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A83A5233C09BC00D4C57D /* Photo.swift */; };
 		55AC1C6D22F7126F00E7F0F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */; };
 		55AC1C7222F7126F00E7F0F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7022F7126F00E7F0F4 /* Main.storyboard */; };
 		55AC1C7422F7127000E7F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC1C7322F7127000E7F0F4 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		55448B8F2336A2BE004D995D /* User2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User2.swift; sourceTree = "<group>"; };
 		55545112232EB8A80058A382 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		55545114232EC8D80058A382 /* HeartControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartControl.swift; sourceTree = "<group>"; };
+		558A83A5233C09BC00D4C57D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		55AC1C6922F7126F00E7F0F4 /* HW Malikov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW Malikov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AC1C6C22F7126F00E7F0F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55AC1C7122F7126F00E7F0F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				55448B8F2336A2BE004D995D /* User2.swift */,
 				55126FB1230495CF000B2C68 /* Group0.swift */,
 				55CA04192312FD1C0020E61E /* News.swift */,
+				558A83A5233C09BC00D4C57D /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				551D2B2D23257F3F00A23BE6 /* CustomPopAnimator.swift in Sources */,
 				55126FB2230495CF000B2C68 /* Group0.swift in Sources */,
 				551D2AFD23204AA600A23BE6 /* FriendsCollectionVC+ UICollectionViewDelegateFlowLayout.swift in Sources */,
+				558A83A6233C09BC00D4C57D /* Photo.swift in Sources */,
 				55D7571E23048EAF009597B9 /* MyGroupsTableViewCell.swift in Sources */,
 				55D7571C23048E53009597B9 /* MyGroupsTableVC.swift in Sources */,
 				55CA04132312EA590020E61E /* NewsViewController.swift in Sources */,

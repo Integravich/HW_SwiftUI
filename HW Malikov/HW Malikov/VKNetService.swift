@@ -98,15 +98,42 @@ class VKNetService {
         // задача для запуска
         let task = VKsession.dataTask(with: urlConstructor.url!) { (data, response, error) in
             // в замыкании обрабатываем полученные данные
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            // выводим в консоль
-            print("wall photos of \(userID):")
-            if let json = json {
-                print(json)
+            do {
+                let responseLevel1 = try JSONDecoder().decode(ResponsePhotosLevel1.self, from: data!)
+                let photoSets = responseLevel1.response.items
+                print("Photos:")
+                var photos = [Photo]()
+                for photoSet in photoSets {
+                    for pic in photoSet.sizes {
+                        if pic.type == "z" {
+                            photos.append(pic)
+                            print(pic.type)
+                            print(pic.url)
+                        }
+                    }
+                }
+                // обработка исключений при работе с хранилищем
+//                do {
+//                    // получаем доступ к хранилищу
+//                    let realm = try Realm()
+//                    // начинаем изменять хранилище
+//                    realm.beginWrite()
+//                    // кладем все объекты класса в хранилище
+//                    realm.add(groups)
+//                    // завершаем изменения хранилища
+//                    try realm.commitWrite()
+//                    print("Количество Group в базе = \(realm.objects(Group.self).count)")
+//                } catch {
+//                    // если произошла ошибка, выводим ее в консоль
+//                    print(error)
+//                }
+            } catch {
+                print(error)
             }
         }
         // запускаем задачу
         task.resume()
+        
     }
     
     // получение списка групп пользователя
@@ -130,14 +157,6 @@ class VKNetService {
         
         // задача для запуска
         let task = VKsession.dataTask(with: urlConstructor.url!) { (data, response, error) in
-            // в замыкании данные, полученные от сервера, мы преобразуем в json
-            //let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            // выводим в консоль
-            // print("groups of \(userID):")
-            // if let json = json {
-            //    print(json)
-            //}
-            
             // в замыкании обрабатываем полученные данные
                 do {
                     let responseLevel1 = try JSONDecoder().decode(ResponseGroupsLevel1.self, from: data!)

@@ -30,6 +30,9 @@ class FriendsTableVC: UITableViewController {
             print(error)
         }
         
+        // загружаем фотографии стены друзей из VK
+        netService.getWallPhotos(ofUserID: String(users[0].id))
+        
         // загружаем фотографии стены пользователя
         //netService.getWallPhotos(ofUserID: session.userId)
         
