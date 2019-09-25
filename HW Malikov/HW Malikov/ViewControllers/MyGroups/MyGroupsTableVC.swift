@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyGroupsTableVC: UITableViewController {
 
-    var myGroups = [Group]()
+    var myGroups = [Group0]()
+    var groups = [Group]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // загружаем список групп из базы Realm
+        do {
+            let realm = try Realm()
+            let groupsFromRealm = realm.objects(Group.self)
+            for group in groupsFromRealm {
+                print("извлечено из базы \(group.name)")
+                groups.append(group)
+            }
+        } catch {
+            print(error)
+        }
+    
     }
 
     // MARK: - Table view data source
@@ -31,7 +40,7 @@ class MyGroupsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myGroups.count
+        return groups.count
     }
     
     
@@ -39,8 +48,10 @@ class MyGroupsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupCell", for: indexPath) as! MyGroupsTableViewCell
         
         // Получаем группу для конкретной строки
-        let group = myGroups[indexPath.row].name
-        let image: UIImage? = myGroups[indexPath.row].image
+        let group = groups[indexPath.row].name
+        let imageUrl = URL(string: groups[indexPath.row].photo)!
+        let imageData = try! Data(contentsOf: imageUrl)
+        let image = UIImage(data: imageData)
         
         // Устанавливаем группу в надпись ячейки
         cell.myGroupCell.text = group
@@ -74,17 +85,6 @@ class MyGroupsTableVC: UITableViewController {
         }
     }
 
-
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     // Override to support editing the table view.
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -97,30 +97,5 @@ class MyGroupsTableVC: UITableViewController {
         }
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
