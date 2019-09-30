@@ -12,6 +12,7 @@ import RealmSwift
 class FriendsTableVC: UITableViewController {
     
     var users = [User]()
+    var photoSet = [Photo]()
     let netService = VKNetService()
     let session = Session.instance
     
@@ -30,15 +31,10 @@ class FriendsTableVC: UITableViewController {
             print(error)
         }
         
-        // загружаем фотографии стены друзей из VK
-        netService.getWallPhotos(ofUserID: String(users[0].id))
-        
-        // загружаем фотографии стены пользователя
-        //netService.getWallPhotos(ofUserID: session.userId)
-        
-        // загружаем группы пользователя
-        //netService.getGroups(ofUserID: session.userId)
-
+        // загружаем ссылки на фотографии стены друзей из VK
+        for user in users {
+            netService.getWallPhotos(ofUser: String(user.id))
+        }
     }
 
     // MARK: - Table view data source
@@ -77,7 +73,7 @@ class FriendsTableVC: UITableViewController {
             let nextScene = segue.destination as? FriendsCollectionVC
             let indexPath = self.tableView.indexPathForSelectedRow
             let selectedFriend = users[indexPath!.row]
-            nextScene!.currentFriend = selectedFriend
+            nextScene!.currentFriendId = String(selectedFriend.id)
         }
     }
 

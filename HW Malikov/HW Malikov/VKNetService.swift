@@ -73,7 +73,7 @@ class VKNetService {
     }
     
     // получения фотографий стены пользователя
-    func getWallPhotos(ofUserID userID: String) {
+    func getWallPhotos(ofUser userId: String) {
         // Конфигурация по умолчанию
         let configuration = URLSessionConfiguration.default
         // собственная сессия
@@ -89,11 +89,13 @@ class VKNetService {
         urlConstructor.path = "/method/photos.get"
         // параметры для запроса
         urlConstructor.queryItems = [
-            URLQueryItem(name: "owner_id", value: userID),
+            URLQueryItem(name: "owner_id", value: userId),
             URLQueryItem(name: "album_id", value: "wall"),
             URLQueryItem(name: "v", value: "5.101"),
             URLQueryItem(name: "access_token", value: session.token),
         ]
+        
+        var picUrls = [String]()
         
         // задача для запуска
         let task = VKsession.dataTask(with: urlConstructor.url!) { (data, response, error) in
@@ -101,32 +103,31 @@ class VKNetService {
             do {
                 let responseLevel1 = try JSONDecoder().decode(ResponsePhotosLevel1.self, from: data!)
                 let photoSets = responseLevel1.response.items
-                print("Photos:")
-                var photos = [Photo]()
+                print("Photos of user: \(userId)")
                 for photoSet in photoSets {
                     for pic in photoSet.sizes {
                         if pic.type == "z" {
-                            photos.append(pic)
-                            print(pic.type)
-                            print(pic.url)
+                            picUrls.append(pic.url)
+                            print(pic.type + " " + pic.url)
                         }
                     }
                 }
                 // обработка исключений при работе с хранилищем
-//                do {
-//                    // получаем доступ к хранилищу
-//                    let realm = try Realm()
-//                    // начинаем изменять хранилище
-//                    realm.beginWrite()
-//                    // кладем все объекты класса в хранилище
-//                    realm.add(groups)
-//                    // завершаем изменения хранилища
-//                    try realm.commitWrite()
-//                    print("Количество Group в базе = \(realm.objects(Group.self).count)")
-//                } catch {
-//                    // если произошла ошибка, выводим ее в консоль
-//                    print(error)
-//                }
+                do {
+                    let realm = try Realm()
+                    for pic in picUrls {
+                        let wallPhoto = WallPhotoOfUser()
+                        wallPhoto.userId = userId
+                        wallPhoto.photoUrl = pic
+                        
+                        realm.beginWrite()
+                        realm.add(wallPhoto)
+                        try realm.commitWrite()
+                    }
+                    print("Количество wallPhotos в базе = \(realm.objects(WallPhotoOfUser.self).count)")
+                } catch {
+                    print(error)
+                }
             } catch {
                 print(error)
             }
