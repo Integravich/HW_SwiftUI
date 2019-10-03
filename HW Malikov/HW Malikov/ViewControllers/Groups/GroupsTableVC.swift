@@ -10,7 +10,7 @@ import UIKit
 
 class GroupsTableVC: UITableViewController {
 
-    var allGroups = [Group]()
+    var allGroups = [Group0]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

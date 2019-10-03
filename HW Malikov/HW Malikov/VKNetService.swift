@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class VKNetService {
     
@@ -48,9 +49,20 @@ class VKNetService {
                         print(user.surname)
                         print(user.avatarPhoto)
                 }
-                DispatchQueue.main.async {
-                    print("loadResults = \(Thread.isMainThread ? "Main Thread":"Background Thread")")
-                    //self.subMenuItemTableView.reloadData()
+                // обработка исключений при работе с хранилищем
+                do {
+                    // получаем доступ к хранилищу
+                    let realm = try Realm()
+                    // начинаем изменять хранилище
+                    realm.beginWrite()
+                    // кладем все объекты класса в хранилище
+                    realm.add(users)
+                    // завершаем изменения хранилища
+                    try realm.commitWrite()
+                    print("Количество User в базе = \(realm.objects(User.self).count)")
+                } catch {
+                    // если произошла ошибка, выводим ее в консоль
+                    print(error)
                 }
             } catch {
                 print(error)
@@ -61,7 +73,7 @@ class VKNetService {
     }
     
     // получения фотографий стены пользователя
-    func getWallPhotos(ofUserID userID: String) {
+    func getWallPhotos(ofUser userId: String) {
         // Конфигурация по умолчанию
         let configuration = URLSessionConfiguration.default
         // собственная сессия
@@ -77,24 +89,52 @@ class VKNetService {
         urlConstructor.path = "/method/photos.get"
         // параметры для запроса
         urlConstructor.queryItems = [
-            URLQueryItem(name: "owner_id", value: userID),
+            URLQueryItem(name: "owner_id", value: userId),
             URLQueryItem(name: "album_id", value: "wall"),
             URLQueryItem(name: "v", value: "5.101"),
             URLQueryItem(name: "access_token", value: session.token),
         ]
         
+        var picUrls = [String]()
+        
         // задача для запуска
         let task = VKsession.dataTask(with: urlConstructor.url!) { (data, response, error) in
             // в замыкании обрабатываем полученные данные
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            // выводим в консоль
-            print("wall photos of \(userID):")
-            if let json = json {
-                print(json)
+            do {
+                let responseLevel1 = try JSONDecoder().decode(ResponsePhotosLevel1.self, from: data!)
+                let photoSets = responseLevel1.response.items
+                print("Photos of user: \(userId)")
+                for photoSet in photoSets {
+                    for pic in photoSet.sizes {
+                        if pic.type == "z" {
+                            picUrls.append(pic.url)
+                            print(pic.type + " " + pic.url)
+                        }
+                    }
+                }
+                // обработка исключений при работе с хранилищем
+                do {
+                    let realm = try Realm()
+                    for pic in picUrls {
+                        let wallPhoto = WallPhotoOfUser()
+                        wallPhoto.userId = userId
+                        wallPhoto.photoUrl = pic
+                        
+                        realm.beginWrite()
+                        realm.add(wallPhoto)
+                        try realm.commitWrite()
+                    }
+                    print("Количество wallPhotos в базе = \(realm.objects(WallPhotoOfUser.self).count)")
+                } catch {
+                    print(error)
+                }
+            } catch {
+                print(error)
             }
         }
         // запускаем задачу
         task.resume()
+        
     }
     
     // получение списка групп пользователя
@@ -118,13 +158,34 @@ class VKNetService {
         
         // задача для запуска
         let task = VKsession.dataTask(with: urlConstructor.url!) { (data, response, error) in
-            // в замыкании данные, полученные от сервера, мы преобразуем в json
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            // выводим в консоль
-            print("groups of \(userID):")
-            if let json = json {
-                print(json)
-            }
+            // в замыкании обрабатываем полученные данные
+                do {
+                    let responseLevel1 = try JSONDecoder().decode(ResponseGroupsLevel1.self, from: data!)
+                    let groups = responseLevel1.responseLevel2.items
+                    print("groups:")
+                    for group in groups {
+                        print(group.id)
+                        print(group.name)
+                        print(group.photo)
+                    }
+                    // обработка исключений при работе с хранилищем
+                    do {
+                        // получаем доступ к хранилищу
+                        let realm = try Realm()
+                        // начинаем изменять хранилище
+                        realm.beginWrite()
+                        // кладем все объекты класса в хранилище
+                        realm.add(groups)
+                        // завершаем изменения хранилища
+                        try realm.commitWrite()
+                        print("Количество Group в базе = \(realm.objects(Group.self).count)")
+                    } catch {
+                        // если произошла ошибка, выводим ее в консоль
+                        print(error)
+                    }
+                } catch {
+                    print(error)
+                }
         }
         // запускаем задачу
         task.resume()

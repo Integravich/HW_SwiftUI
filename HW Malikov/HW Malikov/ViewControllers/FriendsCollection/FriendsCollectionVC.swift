@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 //private let reuseIdentifier = "Cell"
 
 class FriendsCollectionVC: UICollectionViewController {
 
-    var currentFriend: User? = nil
+    var currentFriendId: String? = nil
+    var picUrls = [String]()
     
     // для Layout
     let itemsPerRow: CGFloat = 3
@@ -24,13 +26,20 @@ class FriendsCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        // загружаем фотографии стены друга из базы Realm
+        do {
+            let realm = try Realm()
+            let photoFromRealm = realm.objects(WallPhotoOfUser.self)
+            for pic in photoFromRealm {
+                if pic.userId == currentFriendId {
+                    print("извлечено из базы \(pic.photoUrl)")
+                    picUrls.append(pic.photoUrl)
+                }
+            }
+        } catch {
+            print(error)
+        }
 
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -53,16 +62,18 @@ class FriendsCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1 //currentFriend!.photoSet.count
+        return picUrls.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendPhoto", for: indexPath) as! FriendsCollectionViewCell
         
         // Получаем фото друга для конкретной строки
-        let friendPhoto = UIImage(imageLiteralResourceName: currentFriend!.avatarPhoto) //currentFriend!.photoSet[indexPath.row]
+        let imageUrl = URL(string: picUrls[indexPath.row])!
+        let imageData = try! Data(contentsOf: imageUrl)
+        let friendPhoto = UIImage(data: imageData)
         
-        // Устанавливаем фото друга в ячейку
+        // Устанавливаем фото в ячейку
         cell.friendImageView.image = friendPhoto
     
         return cell

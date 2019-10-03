@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +25,6 @@
                                             <constraint firstAttribute="height" constant="30" id="4VS-yw-bRO"/>
                                             <constraint firstAttribute="width" constant="196" id="cTx-tn-JDL"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -36,7 +33,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UYU-zB-cpz"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -50,7 +46,7 @@
                                         <rect key="frame" x="185" y="506" width="44" height="30"/>
                                         <state key="normal" title="Войти"/>
                                         <connections>
-                                            <segue destination="5fK-JD-GJl" kind="presentation" identifier="segueLogin" id="JNl-1e-kCn"/>
+                                            <segue destination="5fK-JD-GJl" kind="presentation" identifier="segueLogin" modalPresentationStyle="fullScreen" id="JNl-1e-kCn"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vkLogin" translatesAutoresizingMaskIntoConstraints="NO" id="MPf-Vr-xyS">
@@ -147,7 +143,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" id="TQs-h9-sL1" customClass="FriendsTableViewCell" customModule="HW_Malikov" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQs-h9-sL1" id="vKA-ZC-9ln">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -215,7 +211,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-aq-K6f">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="170"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -236,6 +232,7 @@
                             <outlet property="delegate" destination="6uP-bq-cwf" id="zJ0-FJ-hAf"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="uuy-Xl-ZE1"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksm-aR-QYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,7 +268,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroupCell" id="lDR-zO-mkG" customClass="MyGroupsTableViewCell" customModule="HW_Malikov" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lDR-zO-mkG" id="wxq-GV-ZFP">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -323,7 +320,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="9ni-Vs-Ot1" customClass="GroupsTableViewCell" customModule="HW_Malikov" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ni-Vs-Ot1" id="eFr-D2-764">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -354,6 +351,7 @@
                             <outlet property="delegate" destination="oU0-l6-e7J" id="cDm-b8-f8I"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="WDW-FZ-R9c"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C0-rt-uT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="w3b-8K-W6i" userLabel="Exit" sceneMemberID="exit"/>
@@ -441,7 +439,7 @@
                         <viewLayoutGuide key="safeArea" id="4f2-LY-cF7"/>
                     </view>
                     <connections>
-                        <segue destination="91k-sp-6JF" kind="show" identifier="VKLoginSegue" id="HgS-GH-tbA"/>
+                        <segue destination="91k-sp-6JF" kind="presentation" identifier="VKLoginSegue" modalPresentationStyle="fullScreen" id="HgS-GH-tbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Op5-w7-fkW" userLabel="First Responder" sceneMemberID="firstResponder"/>

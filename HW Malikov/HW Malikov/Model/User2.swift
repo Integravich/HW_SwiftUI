@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-class User: Codable {
-    let id: Int
-    let name: String
-    let surname: String
-    let avatarPhoto: String
+// Класс Realm немногим отличается от обычного. Во-первых, он наследуется от класса Object. Во-вторых, обычные свойства должны быть помечены ключевым словом @objc dynamic.
+class User: Object, Codable {
+    @objc dynamic var id: Int
+    @objc dynamic var name: String
+    @objc dynamic var surname: String
+    @objc dynamic var avatarPhoto: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -21,9 +23,12 @@ class User: Codable {
         case avatarPhoto = "photo_50"
     }
     
-    var fullName: String {
-        return name + " " + surname
+    var fullname: String {
+        get {
+            return surname + " " + name
+        }
     }
+
 }
 
 struct ResponseFriendsLevel2: Codable {

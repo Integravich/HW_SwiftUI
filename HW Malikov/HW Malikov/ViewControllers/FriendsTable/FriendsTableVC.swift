@@ -7,30 +7,34 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendsTableVC: UITableViewController {
     
-    //var friends = [User0]()
-    var users = [User]() {
-        didSet {
-            print("users count \(users.count)")
-        }
-    }
+    var users = [User]()
+    var photoSet = [Photo]()
     let netService = VKNetService()
     let session = Session.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // загружаем друзей из VK
-        netService.getFriends()
+        // загружаем друзей из базы Realm
+        do {
+            let realm = try Realm()
+            let usersFromRealm = realm.objects(User.self)
+            for user in usersFromRealm {
+                print("извлечено из базы \(user.fullname)")
+                users.append(user)
+            }
+        } catch {
+            print(error)
+        }
         
-        // загружаем фотографии стены пользователя
-        netService.getWallPhotos(ofUserID: session.userId)
-        
-        // загружаем группы пользователя
-        netService.getGroups(ofUserID: session.userId)
-
+        // загружаем ссылки на фотографии стены друзей из VK
+        for user in users {
+            netService.getWallPhotos(ofUser: String(user.id))
+        }
     }
 
     // MARK: - Table view data source
@@ -51,9 +55,10 @@ class FriendsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendsTableViewCell
         
         // Получаем друга для конкретной строки
-        let friend = users[indexPath.row].fullName
-        //let friendPhoto = friends[indexPath.row].photoSet[0]
-        let friendPhoto = UIImage(imageLiteralResourceName: users[indexPath.row].avatarPhoto)
+        let friend = users[indexPath.row].fullname
+        let imageUrl = URL(string: users[indexPath.row].avatarPhoto)!
+        let imageData = try! Data(contentsOf: imageUrl)
+        let friendPhoto = UIImage(data: imageData)
         
         // Устанавливаем друга в надпись ячейки
         cell.friendName.text = friend
@@ -68,7 +73,7 @@ class FriendsTableVC: UITableViewController {
             let nextScene = segue.destination as? FriendsCollectionVC
             let indexPath = self.tableView.indexPathForSelectedRow
             let selectedFriend = users[indexPath!.row]
-            nextScene!.currentFriend = selectedFriend
+            nextScene!.currentFriendId = String(selectedFriend.id)
         }
     }
 
